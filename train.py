@@ -1,5 +1,4 @@
 import numpy as np
-from skimage.transform import resize
 import os, glob
 from imageio import imsave
 from random import shuffle
