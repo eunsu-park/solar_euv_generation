@@ -38,11 +38,11 @@ class aia_intscale():
         elif self.wavelnth == '335':
             data = np.log10((data*6.99734).clip(3.5, 1000.))
         elif self.wavelnth == '1600':
-            data = (data*2.99911).clip(0., 1000.))
+            data = (data*2.99911).clip(0., 1000.)
         elif self.wavelnth == '1700':
-            data = (data*1.00026).clip(0., 2500.))
+            data = (data*1.00026).clip(0., 2500.)
         elif self.wavelnth == '4500':
-            data = (data*1.00026).clip(0., 26000.))
+            data = (data*1.00026).clip(0., 26000.)
         data = bytescale(data)
     def __call__(self, data):
         data = self.aia_rescale(data)
