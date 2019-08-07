@@ -1,1 +1,1 @@
-# solar_euv_generation
+# Solar UV/EUV Generation
