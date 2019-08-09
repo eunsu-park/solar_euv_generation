@@ -1,5 +1,11 @@
 # Solar UV/EUV Generation
 
+Solar UV and EUV image generation using solar magnetograms.
+
+For the UV and EUV images, we use SDO/AIA 9 passbands images.
+
+For the solar magnetograms, we use SDO/HMI Line-of-sight magnetograms.
+
 ## Network Architectures
 
 Let,
