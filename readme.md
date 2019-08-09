@@ -25,22 +25,28 @@ and D as Dropout layer with rate 0.5.
 We can select the size of the receptive field of the discriminator.
  
  - 1x1 discriminator
-C(64,1,1)-L-C(128,1,1)-B-L-C(1,1,1)-S\\
+
+C(64,1,1)-L-C(128,1,1)-B-L-C(1,1,1)-S
 
  - 16x16 discriminator
-C(64,4,2)-L-C(128,4,1)-B-L-C(1,4,1)-S\\
+
+C(64,4,2)-L-C(128,4,1)-B-L-C(1,4,1)-S
 
  - 34x34 discriminator
-C(64,4,2)-L-C(128,4,2)-B-L-C(256,4,1)-B-L-C(1,4,1)-S\\
+
+C(64,4,2)-L-C(128,4,2)-B-L-C(256,4,1)-B-L-C(1,4,1)-S
 
  - 70x70 discriminator
-C(64,4,2)-L-C(128,4,2)-B-L-C(256,4,2)-B-L-C(512,4,1)-B-L-C(1,4,1)-S\\
+
+C(64,4,2)-L-C(128,4,2)-B-L-C(256,4,2)-B-L-C(512,4,1)-B-L-C(1,4,1)-S
 
  - 142x142 discriminator
-C(64,4,2)-L-C(128,4,2)-B-L-C(256,4,2)-B-L-C(512,4,2)-B-L-C(512,4,1)-B-L-C(1,4,1)-S\\
+
+C(64,4,2)-L-C(128,4,2)-B-L-C(256,4,2)-B-L-C(512,4,2)-B-L-C(512,4,1)-B-L-C(1,4,1)-S
 
  - 286x286 discriminator
-C(64,4,2)-L-C(128,4,2)-B-L-C(256,4,2)-B-L-C(512,4,2)-B-L-C(512,4,2)-B-L-C(512,4,1)-B-L-C(1,4,1)-S\\
+
+C(64,4,2)-L-C(128,4,2)-B-L-C(256,4,2)-B-L-C(512,4,2)-B-L-C(512,4,2)-B-L-C(512,4,1)-B-L-C(1,4,1)-S
 
 ### Generator Network
 
@@ -72,7 +78,7 @@ The generator network is consist of the encoder and the decoder
 9. CT(64,4,2)-B-R
 10. CT(1,4,2)-S
 
-The generator network has skip-connections between $i$-th layers of the encoder and $10-i$-th layers of the decoder like the U-Net architecture.
+The generator network has skip-connections between i-th layers of the encoder and (10-i)-th layers of the decoder like the U-Net architecture.
 
 #### Skip-connection:
 
