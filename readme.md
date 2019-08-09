@@ -22,20 +22,25 @@ and D as Dropout layer with rate 0.5.
 
 ### Discriminator Network
 
-We can select the size of the receptive field of the discriminator.\\
-$1\times1$ discriminator:\\
+We can select the size of the receptive field of the discriminator.
+ 
+ - 1x1 discriminator
 C(64,1,1)-L-C(128,1,1)-B-L-C(1,1,1)-S\\
-$16\times16$ discriminator:\\
+
+ - 16x16 discriminator
 C(64,4,2)-L-C(128,4,1)-B-L-C(1,4,1)-S\\
-$34\times34$ discriminator:\\
+
+ - 34x34 discriminator
 C(64,4,2)-L-C(128,4,2)-B-L-C(256,4,1)-B-L-C(1,4,1)-S\\
-$70\times70$ discriminator:\\
+
+ - 70x70 discriminator
 C(64,4,2)-L-C(128,4,2)-B-L-C(256,4,2)-B-L-C(512,4,1)-B-L-C(1,4,1)-S\\
-$142\times142$ discriminator:\\
+
+ - 142x142 discriminator
 C(64,4,2)-L-C(128,4,2)-B-L-C(256,4,2)-B-L-C(512,4,2)-B-L-C(512,4,1)-B-L-C(1,4,1)-S\\
-$286\times286$ discriminator:\\
+
+ - 286x286 discriminator
 C(64,4,2)-L-C(128,4,2)-B-L-C(256,4,2)-B-L-C(512,4,2)-B-L-C(512,4,2)-B-L-C(512,4,1)-B-L-C(1,4,1)-S\\
-In this work, we use $70\times70$ discriminator for all models.
 
 ### Generator Network
 
