@@ -30,31 +30,34 @@ C(64,4,2)-L-C(128,4,2)-B-L-C(256,4,2)-B-L-C(512,4,2)-B-L-C(512,4,2)-B-L-C(512,4,
 In this work, we use $70\times70$ discriminator for all models.
 
 #### Generator Network
-The generator network is consist of the encoder and the decoder\\
-Encoder:\\
-1. C(64,4,2)-L\\
-2. C(128,4,2)-B-L\\
-3. C(256,4,2)-B-L\\
-4. C(512,4,2)-B-L\\
-5. C(512,4,2)-B-L\\
-6. C(512,4,2)-B-L\\
-7. C(512,4,2)-B-L\\
-8. C(512,4,2)-B-L\\
-9. C(512,4,2)-B-L\\
-10. C(512,4,2)-R\\
-Decoder:\\
-1. CT(512,4,2)-B-D-R\\
-2. CT(512,4,2)-B-D-R\\
-3. CT(512,4,2)-B-D-R\\
-4. CT(512,4,2)-B-R\\
-5. CT(512,4,2)-B-R\\
-6. CT(512,4,2)-B-R\\
-7. CT(256,4,2)-B-R\\
-8. CT(128,4,2)-B-R\\
-9. CT(64,4,2)-B-R\\
-10. CT(1,4,2)-S\\
-The generator network has skip-connections between $i$-th layers of the encoder and $10-i$-th layers of the decoder like the U-Net architecture.\\
-Skip-connection:\\
+The generator network is consist of the encoder and the decoder
+Encoder:
+1. C(64,4,2)-L
+2. C(128,4,2)-B-L
+3. C(256,4,2)-B-L
+4. C(512,4,2)-B-L
+5. C(512,4,2)-B-L
+6. C(512,4,2)-B-L
+7. C(512,4,2)-B-L
+8. C(512,4,2)-B-L
+9. C(512,4,2)-B-L
+10. C(512,4,2)-R
+Decoder:
+1. CT(512,4,2)-B-D-R
+2. CT(512,4,2)-B-D-R
+3. CT(512,4,2)-B-D-R
+4. CT(512,4,2)-B-R
+5. CT(512,4,2)-B-R
+6. CT(512,4,2)-B-R
+7. CT(256,4,2)-B-R
+8. CT(128,4,2)-B-R
+9. CT(64,4,2)-B-R
+10. CT(1,4,2)-S
+
+The generator network has skip-connections between $i$-th layers of the encoder and $10-i$-th layers of the decoder like the U-Net architecture.
+
+Skip-connection:
+
 encoder 1st layer - decoder 9th layer\\
 encoder 2nd layer - decoder 8th layer\\
 encoder 3rd layer - decoder 7th layer\\
