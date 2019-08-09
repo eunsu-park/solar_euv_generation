@@ -1,18 +1,26 @@
-## Solar UV/EUV Generation
+# Solar UV/EUV Generation
 
-### Network Architectures
+## Network Architectures
 
-Let,\\
-C(f, k, s) denotes as 2D Convolution layer with f filters, filter size of k, stride of s,\\
-CT(f, k, s) as 2D Convolution-Transpose layer with f filters, filter size of k, stride of s,\\
-B as Batch-Normalization layer\citep{Ioffe2015},\\
-R as ReLU activation layer,\\
-L as Leaky-ReLU activation layer with slope 0.2,\\
-T as Tanh activation layer,\\
-S as Sigmoid activation layer,\\
+Let,
+
+C(f, k, s) denotes as 2D Convolution layer with f filters, filter size of k, stride of s,
+
+CT(f, k, s) as 2D Convolution-Transpose layer with f filters, filter size of k, stride of s,
+
+B as Batch-Normalization layer,
+
+R as ReLU activation layer,
+
+L as Leaky-ReLU activation layer with slope 0.2,
+
+T as Tanh activation layer,
+
+S as Sigmoid activation layer,
+
 and D as Dropout layer with rate 0.5.
 
-#### Discriminator Network
+### Discriminator Network
 
 We can select the size of the receptive field of the discriminator.\\
 $1\times1$ discriminator:\\
@@ -29,9 +37,12 @@ $286\times286$ discriminator:\\
 C(64,4,2)-L-C(128,4,2)-B-L-C(256,4,2)-B-L-C(512,4,2)-B-L-C(512,4,2)-B-L-C(512,4,1)-B-L-C(1,4,1)-S\\
 In this work, we use $70\times70$ discriminator for all models.
 
-#### Generator Network
+### Generator Network
+
 The generator network is consist of the encoder and the decoder
-Encoder:
+
+#### Encoder:
+
 1. C(64,4,2)-L
 2. C(128,4,2)-B-L
 3. C(256,4,2)-B-L
@@ -42,7 +53,9 @@ Encoder:
 8. C(512,4,2)-B-L
 9. C(512,4,2)-B-L
 10. C(512,4,2)-R
-Decoder:
+
+#### Decoder:
+
 1. CT(512,4,2)-B-D-R
 2. CT(512,4,2)-B-D-R
 3. CT(512,4,2)-B-D-R
@@ -56,14 +69,14 @@ Decoder:
 
 The generator network has skip-connections between $i$-th layers of the encoder and $10-i$-th layers of the decoder like the U-Net architecture.
 
-Skip-connection:
+#### Skip-connection:
 
-encoder 1st layer - decoder 9th layer\\
-encoder 2nd layer - decoder 8th layer\\
-encoder 3rd layer - decoder 7th layer\\
-encoder 4th layer - decoder 6th layer\\
-encoder 5th layer - decoder 5th layer\\
-encoder 6th layer - decoder 4th layer\\
-encoder 7th layer - decoder 3rd layer\\
-encoder 8th layer - decoder 2nd layer\\
-encoder 9th layer - decoder 1st layer\\
+- encoder 1st layer - decoder 9th layer
+- encoder 2nd layer - decoder 8th layer
+- encoder 3rd layer - decoder 7th layer
+- encoder 4th layer - decoder 6th layer
+- encoder 5th layer - decoder 5th layer
+- encoder 6th layer - decoder 4th layer
+- encoder 7th layer - decoder 3rd layer
+- encoder 8th layer - decoder 2nd layer
+- encoder 9th layer - decoder 1st layer
