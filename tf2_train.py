@@ -75,7 +75,9 @@ class train(option_train):
             if self.shake :
                 batch_A, batch_B = self.shake_tensor(batch_A, batch_B)
             i += sz
-            tmpsz = yield epoch, batch_A.astype(np.float32), batch_B.astype(np.float32)        
+            batch_A = tf.cast(batch_A, tf.float32)
+            batch_B = tf.cast(batch_B, tf.float32)
+            tmpsz = yield epoch, batch_A, batch_B
         
     def run_validation(self):
         
