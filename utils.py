@@ -17,8 +17,8 @@ def bytescale(data, imin=None, imax=None):
 
 # Maybe almost same function to aia_intscale.pro in SSW.
 class aia_intscale():
-    list_aia = [94, 131, 171, 193, 211, 304, 335, 1600, 1700, 4500]
     def __init__(self, wavelnth):
+        list_aia = [94, 131, 171, 193, 211, 304, 335, 1600, 1700, 4500]
         self.wavelnth = str(int(wavelnth))
         if int(self.wavelnth) not in list_aia:
             raise ValueError('%d is invalid AIA wavelength'%int(self.wavelnth))
@@ -44,6 +44,7 @@ class aia_intscale():
         elif self.wavelnth == '4500':
             data = (data*1.00026).clip(0., 26000.)
         data = bytescale(data)
+        return data
     def __call__(self, data):
         data = self.aia_rescale(data)
         return data
