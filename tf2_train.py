@@ -86,6 +86,7 @@ class train(option_train):
         
         for file_A in self.list_validation :
             real_A = self.make_tensor_input(file_A)
+            real_A = tf.cast(real_A, tf.float32)
             fake_B = self.network_G.predict(real_A)
             fake_B, fake_B_png = self.make_output(fake_B)
             
@@ -102,6 +103,7 @@ class train(option_train):
         
         for file_A in self.list_test :
             real_A = self.make_tensor_input(file_A)
+            real_A = tf.cast(real_A, tf.float32)
             fake_B = self.network_G.predict(real_A)
             fake_B, fake_B_png = self.make_output(fake_B)
             
