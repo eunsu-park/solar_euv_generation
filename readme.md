@@ -6,10 +6,6 @@ For the UV and EUV images, we use SDO/AIA 9 passbands images.
 
 For the solar magnetograms, we use SDO/HMI Line-of-sight magnetograms.
 
-## To run this code,
-
-Change some parameters in option.py (about your environments) and run train.py
-
 ## Network Architectures
 
 Let,
@@ -101,3 +97,8 @@ The generator network has skip-connections between i-th layers of the encoder an
 - encoder 7th layer - decoder 3rd layer
 - encoder 8th layer - decoder 2nd layer
 - encoder 9th layer - decoder 1st layer
+
+## To run this code,
+
+Change some parameters in option.py (about your environments) and run train.py
+
