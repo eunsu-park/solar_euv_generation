@@ -12,9 +12,6 @@ def UP_CONV(nb_feature, *a, **k):
 def BATCH_NORM():
     return keras.layers.BatchNormalization(momentum=0.9, axis=-1, epsilon=1.01e-5, gamma_initializer = gamma_init)
 
-def UP_SAMPLE(*a, **k):
-    return keras.layers.UpSampling2D(*a, **k)
-
 def DROPOUT(*a, **k):
     return keras.layers.Dropout(*a, **k)
 
@@ -26,9 +23,6 @@ def LEAKY_RELU(*a, **k):
 
 def CONCATENATE(*a, **k):
     return keras.layers.Concatenate(*a, **k)
-
-def DENSE(*a, **k):
-    return keras.layers.Dense(*a, **k)
 
 def BLOCK_ENCODER(layer, nb_feature):
     layer = LEAKY_RELU(0.2) (layer)
