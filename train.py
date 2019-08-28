@@ -219,6 +219,7 @@ class train(option_train):
         
                 t1 = time.time()    
         
+# run train        
 if __name__ == '__main__' :
     do_train = train()
     do_train.run()
