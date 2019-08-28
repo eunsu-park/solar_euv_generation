@@ -1,6 +1,7 @@
 import numpy as np
 from skimage.transform import resize
 
+# Linear rescale
 def rescale(data, imin, imax, omin, omax):
     odif = omax-omin
     idif = imax-imin
