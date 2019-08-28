@@ -6,6 +6,10 @@ For the UV and EUV images, we use SDO/AIA 9 passbands images.
 
 For the solar magnetograms, we use SDO/HMI Line-of-sight magnetograms.
 
+## To run this code,
+
+Change some parameters in option.py (about your environments) and run train.py
+
 ## Network Architectures
 
 Let,
