@@ -1,4 +1,4 @@
-# Solar UV/EUV Generation
+# Solar UV/EUV Generation (Keras)
 
 Solar UV and EUV image generation using solar magnetograms.
 
