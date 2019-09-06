@@ -4,12 +4,13 @@ isize = 1024
 rsun = 392
 binning = 4
 isize_new = isize//binning
+rsun_new = rsun_new//binning
 
 ## circle filter to consider only solar disk.
 X = np.arange(isize_new)[:, None]
 Y = np.arange(isize_new)[None, :]
 XY = np.sqrt((X-isize_new/2.)**2. + (Y-isize_new/2.)**2.)
-cfilter = np.where(XY<rsun)
+cfilter = np.where(XY<rsun_new)
 
 ## resize
 from skimage.transform import resize
