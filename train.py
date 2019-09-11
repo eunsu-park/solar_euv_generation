@@ -88,7 +88,8 @@ class train(option_train):
                 batch_A, batch_B = self.shake_tensor(batch_A, batch_B)
             i += sz
             tmpsz = yield epoch, batch_A.astype(np.float32), batch_B.astype(np.float32)        
-        
+
+    ## generate AIA-like image from HMI data in validation data set    
     def run_validation(self):
         
         path_snap = '%s/iter_%07d'%(self.root_snap, self.iter_gen)
@@ -104,7 +105,8 @@ class train(option_train):
             imsave('%s/%s.png'%(path_snap, name_save), fake_B_png)
             
         print('Validation snaps (%d images) are saved in %s'%(self.nb_validation, path_snap))
-            
+
+    ## generate AIA-like image from HMI data in test data set    
     def run_test(self):
         
         path_test = '%s/iter_%07d'%(self.root_test, self.iter_gen)
