@@ -45,7 +45,7 @@ def BLOCK_DECODER(layer, nb_feature):
     layer = BATCH_NORM() (layer, training=1)
     return layer
 
-def UNET(isize, ch_input, ch_output, nb_feature_g=64, nb_feature_max=512):
+def UNET(isize, ch_input, ch_output, nb_feature_g=64, nb_feature_max=512, use_tanh=False):
     
     input_A = keras.layers.Input(shape=(isize, isize, ch_input), dtype='float32')
     current_size=isize
@@ -81,7 +81,8 @@ def UNET(isize, ch_input, ch_output, nb_feature_g=64, nb_feature_max=512):
     layer = ACTIVATION('relu') (layer)
     layer = UP_CONV(ch_output, kernel_size=4, strides=2, padding='same') (layer)
     current_size *= 2
-    layer = ACTIVATION('tanh') (layer)
+    if use_tanh:
+        layer = ACTIVATION('tanh') (layer)
     
     return keras.models.Model(inputs = input_A, outputs = layer)
 
