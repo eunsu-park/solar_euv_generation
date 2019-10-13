@@ -68,16 +68,19 @@ def UNET(isize, ch_input, ch_output, nb_feature_g=64, nb_feature_max=512, use_ta
         nb_block += 1
             
     layer = BLOCK_INTMISS(list_layer_encoder[-1], nb_feature)
+
+    list_layer_encoder = list(reversed(list_layer_encoder))
+    list_n_fearue = list(reversed(list_nb_features[:-1]))
     
     for n in range(nb_block):
-        layer = CONCATENATE(axis=-1)([layer, list_layer_encoder[-n-1]])
-        nb_feature = list_nb_feature[-n-2]
+        layer = CONCATENATE(axis=-1)([layer, list_layer_encoder[n]])
+        nb_feature = list_nb_feature[n]
         layer = BLOCK_DECODER(layer, nb_feature)
         current_size *= 2
         if current_size <= 8 :
             layer = DROPOUT(0.5) (layer, training=1)
     
-    layer = CONCATENATE(axis=-1)([layer, list_layer_encoder[0]])
+    layer = CONCATENATE(axis=-1)([layer, list_layer_encoder[-1]])
     layer = ACTIVATION('relu') (layer)
     layer = UP_CONV(ch_output, kernel_size=4, strides=2, padding='same') (layer)
     current_size *= 2
