@@ -70,7 +70,7 @@ def UNET(isize, ch_input, ch_output, nb_feature_g=64, nb_feature_max=512, use_ta
     layer = BLOCK_INTMISS(list_layer_encoder[-1], nb_feature)
 
     list_layer_encoder = list(reversed(list_layer_encoder))
-    list_n_fearue = list(reversed(list_nb_features[:-1]))
+    list_n_fearue = list(reversed(list_nb_feature[:-1]))
     
     for n in range(nb_block):
         layer = CONCATENATE(axis=-1)([layer, list_layer_encoder[n]])
