@@ -1,10 +1,8 @@
 # Solar UV/EUV Generation (Keras)
 
-Park et al., 2019, ApJL, 884, L23
+Park et al., 2019, ApJL, 884, L23, doi:http://doi.org/10.3847/2041-8213/ab46bb
 
-http://doi.org/10.3847/2041-8213/ab46bb
-
-Solar UV and EUV image generation using solar magnetograms.
+Title: Generation of Solar UV and EUV Images from SDO/HMI Magnetograms by Deep Learning
 
 For the UV and EUV images, we use SDO/AIA 9 passbands images.
 
