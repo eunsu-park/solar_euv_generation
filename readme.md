@@ -1,4 +1,4 @@
-# Solar UV/EUV Generation (Keras)
+# Solar UV/EUV Generation (Keras, TensorFlow2)
 
 Park et al., 2019, ApJL, 884, L23, doi:http://doi.org/10.3847/2041-8213/ab46bb
 
@@ -103,5 +103,7 @@ The generator network has skip-connections between i-th layers of the encoder an
 
 ## To run this code,
 
-Change some parameters in option.py (about your environments) and run train.py
+Keras: Change some parameters in option.py (about your environments) and run train.py
+
+TensorFlow2: Change some parameters in solar_generation_tf2.ipynb and run the notebook
 
